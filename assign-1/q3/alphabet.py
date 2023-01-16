@@ -1,6 +1,7 @@
 import string
 import collections
 import matplotlib.pyplot as plt
+import json
 
 def count_letters(file_path):
     with open(file_path, 'r') as f:
@@ -27,10 +28,15 @@ def plot_letter_freqs(letter_freqs):
     plt.ylabel('Number of letters')
     plt.show()
 
-
 # Testing the code, can be used for any text file
 file_path = 'assign-1/q3/gutenberg.txt'
 letter_freqs = count_letters(file_path)
-print(letter_freqs)
+
+# sort the dictionary
+sorted_letter_freqs = dict(sorted(letter_freqs.items()))
+
+# format the output to 5 decimal places
+formatted_output = json.dumps({letter: '{:.5f}'.format(freq) for letter, freq in sorted_letter_freqs.items()}, indent=4)
+print(formatted_output)
 plot_letter_freqs(letter_freqs)
 
