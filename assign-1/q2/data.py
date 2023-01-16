@@ -4,6 +4,8 @@ import json
 with open('data.json', 'r') as f:
     data = json.load(f)
 
+data.reverse()
+
 # modify data and write it back to another file
 with open('written_file.json', 'w') as f:
     json.dump(data, f)
