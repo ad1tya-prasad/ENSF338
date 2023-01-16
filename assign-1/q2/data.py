@@ -1,14 +1,14 @@
 import json
 
 # load data from json file
-with open('data.json', 'r') as f:
+with open('assign-1/q2/data.json', 'r') as f:
     data = json.load(f)
 
+# reverse the data
 data.reverse()
 
-# modify data and write it back to another file
-with open('written_file.json', 'w') as f:
+# and write it back to another file
+with open('assign-1/q2/reversed_data.json', 'w') as f:
     json.dump(data, f)
 
-print(data)
 
